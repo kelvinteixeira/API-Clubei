@@ -1,0 +1,18 @@
+{
+  "name": "api-clubei",
+  "version": "1.0.0",
+  "description": "API para o site Clubei",
+  "main": "index.js",
+  "author": "Kelvin Teixeira",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.3"
+  }
+}
