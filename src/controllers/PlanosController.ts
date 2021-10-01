@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import knex from '../database/connection'
 
 export default {
 
@@ -10,26 +11,7 @@ export default {
   },
 
   async list(req: Request, res: Response) {
-    let planos = [
-      {
-        id: 1,
-        titulo: "Plano A",
-        descricao: "Direito a 1 assinatura mensal",
-        valor: 49.90
-      },
-      {
-        id: 2,
-        titulo: "Plano B",
-        descricao: "Direito a 2 assinaturas mensal",
-        valor: 89.90
-      },
-      {
-        id: 3,
-        titulo: "Plano C",
-        descricao: "Direito a 3 assinaturas mensal",
-        valor: 129.90
-      },
-    ]
+    let planos = await knex('tab_planos').orderBy('id')
     return res.status(200).json({ data: planos })
   },
    async update(req: Request, res: Response) {
