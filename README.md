@@ -5,7 +5,7 @@ API desenvolvida para ser utilizada no projeto de catálogos de assinaturas e se
 
 ## Tecnologias usadas
 - Node.Js
-- Javascript
+- Typescript
 - MySQL
 - Docker
 
