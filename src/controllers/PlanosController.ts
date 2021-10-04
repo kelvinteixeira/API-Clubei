@@ -11,7 +11,7 @@ export default {
   },
 
   async list(req: Request, res: Response) {
-    let planos = await knex('tab_planos').orderBy('id')
+    let planos = await knex('planos').orderBy('id')
     return res.status(200).json({ data: planos })
   },
    async update(req: Request, res: Response) {

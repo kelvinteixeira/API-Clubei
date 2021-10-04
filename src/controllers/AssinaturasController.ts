@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import knex from "../database/connection";
 
 export default {
   async create(req: Request, res: Response) {
@@ -9,29 +10,7 @@ export default {
   },
 
   async list(req: Request, res: Response) {
-    let assinaturas = [
-      {
-        id: 1,
-        titulo: "Assinatura A",
-        categoria: "Categoria 1",
-        descricao: "Assinatura top...",
-        valor: 49.90
-      },
-      {
-        id: 1,
-        titulo: "Assinatura B",
-        categoria: "Categoria 2",
-        descricao: "Assinatura top...",
-        imagem: "link"
-      },
-      {
-        id: 3,
-        titulo: "Assinatura C",
-        categoria: "Categoria 3",
-        descricao: "Assinatura top...",
-        imagem: "link"
-      },
-    ]
+    let assinaturas =  await knex('assinaturas').orderBy('id')
     return res.status(200).json({data: assinaturas})
   },
   async update(req: Request, res: Response) {
