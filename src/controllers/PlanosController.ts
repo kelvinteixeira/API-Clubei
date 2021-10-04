@@ -14,6 +14,7 @@ export default {
     let planos = await knex('planos').orderBy('id')
     return res.status(200).json({ data: planos })
   },
+  
    async update(req: Request, res: Response) {
     const { titulo, descricao, valor } = req.body
     const dataAlteracao = '01/10/2021 16:00'
