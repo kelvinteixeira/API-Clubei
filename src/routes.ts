@@ -14,8 +14,6 @@ routes.get('/api-clubei/assinaturas', AssinaturasController.list)
 routes.put('/api-clubei/assinaturas/:id', AssinaturasController.update)
 routes.get('/api-clubei/assinaturas/:id', AssinaturasController.find)
 routes.delete('/api-clubei/assinaturas/:id', AssinaturasController.delete)
-routes.delete('/api-clubei/assinaturas/categorias/:id', AssinaturasController.listCategorias)
-
 
 routes.get('/api-clubei/categorias', CategoriasController.list)
 routes.get('/api-clubei/categorias/:id_categoria/assinaturas', CategoriasController.find)

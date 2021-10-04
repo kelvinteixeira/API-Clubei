@@ -20,12 +20,6 @@ export default {
     return res.status(200).json({ data: assinatura })
   },
 
-  async listCategorias(req: Request, res: Response) {
-    const { id_categoria } = req.params
-    let categorias = await knex('assinaturas').where({ id_categoria })
-    return res.status(200).json(categorias)
-  },
-
   async update(req: Request, res: Response) {
     const { id } = req.params
     const { titulo, categoria, descricao, imagem } = req.body
