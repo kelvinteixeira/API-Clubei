@@ -10,6 +10,8 @@ routes.get('/api-clubei/planos', PlanosController.list)
 
 routes.post('/api-clubei/assinaturas', AssinaturasController.create)
 routes.get('/api-clubei/assinaturas', AssinaturasController.list)
-routes.put('/api-clubei/assinaturas', AssinaturasController.update)
+routes.put('/api-clubei/assinaturas/:id', AssinaturasController.update)
+routes.get('/api-clubei/assinaturas/:id', AssinaturasController.find)
+routes.delete('/api-clubei/assinaturas/:id', AssinaturasController.delete)
 
 export default routes
