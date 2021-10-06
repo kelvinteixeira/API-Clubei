@@ -3,7 +3,6 @@ import multer from 'multer'
 
 import AssinaturasController from "./controllers/AssinaturasController";
 import CategoriasController from "./controllers/CategoriasController";
-import PlanosController from "./controllers/PlanosController"
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -17,10 +16,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 const routes = Router()
-
-routes.post('/api-clubei/planos', PlanosController.create)
-routes.put('/api-clubei/planos', PlanosController.update)
-routes.get('/api-clubei/planos', PlanosController.list)
 
 routes.post('/api-clubei/assinaturas', upload.single('assinatura_img'), AssinaturasController.create)
 routes.get('/api-clubei/assinaturas', AssinaturasController.list)
