@@ -6,7 +6,8 @@
   "author": "Kelvin Teixeira",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev src/server.ts"
+    "dev": "ts-node-dev src/server.ts",
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
