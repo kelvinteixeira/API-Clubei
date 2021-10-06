@@ -26,7 +26,8 @@ export default {
 
   async update(req: Request, res: Response) {
     const { id } = req.params
-    const { titulo, id_categoria, descricao, assinatura_img } = req.body
+    const assinatura_img = req.file?.path
+    const { titulo, id_categoria, descricao } = req.body
     const data = { titulo, id_categoria, descricao, assinatura_img }
     await knex('assinaturas').update(data).where({ id })
     const assinatura = await knex('assinaturas').where({ id })
