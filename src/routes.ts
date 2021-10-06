@@ -19,11 +19,14 @@ const routes = Router()
 
 routes.post('/api-clubei/assinaturas', upload.single('assinatura_img'), AssinaturasController.create)
 routes.get('/api-clubei/assinaturas', AssinaturasController.list)
-routes.put('/api-clubei/assinaturas/:id', AssinaturasController.update)
 routes.get('/api-clubei/assinaturas/:id', AssinaturasController.find)
+routes.put('/api-clubei/assinaturas/:id', AssinaturasController.update)
 routes.delete('/api-clubei/assinaturas/:id', AssinaturasController.delete)
 
+routes.post('/api-clubei/categorias', CategoriasController.create)
 routes.get('/api-clubei/categorias', CategoriasController.list)
 routes.get('/api-clubei/categorias/:id_categoria/assinaturas', CategoriasController.find)
+routes.put('/api-clubei/categorias/:id_categoria/', CategoriasController.update)
+routes.delete('/api-clubei/categorias/:id_categoria', CategoriasController.delete)
 
 export default routes
