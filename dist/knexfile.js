@@ -1,24 +1,13 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var path_1 = __importDefault(require("path"));
 exports.default = {
     development: {
         client: 'mysql2',
         connection: {
-            host: 'localhost',
-            user: 'root',
-            password: 'root',
-            database: 'clubei_db'
-        },
-        migrations: {
-            tableName: 'knex-migrations',
-            directory: path_1.default.resolve(__dirname, 'src', 'database', 'migrations')
-        },
-        seeds: {
-            directory: path_1.default.resolve(__dirname, 'src', 'database', 'seeds')
+            host: 'us-cdbr-east-04.cleardb.com',
+            user: '"ba74bf79fcfadb',
+            password: 'aa3810d4',
+            database: 'heroku_2a2856ff6780273',
         }
     }
 };
