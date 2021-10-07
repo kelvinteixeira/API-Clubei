@@ -7,8 +7,7 @@ export default {
       host: 'localhost',
       user: 'root',
       password: 'root',
-      database: 'cluei_db',
-      
+      database: 'cleardb-heroku',
     }
   }
 }
