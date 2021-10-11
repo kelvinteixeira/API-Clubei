@@ -1,0 +1,402 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Rest API do site Clubei contendo as assinaturas com sua respectivas categorias e imagens",
+    "version": "1.0.0",
+    "title": "API Clubei",
+    "contact": {
+      "email": "emailfake@clubei.com.br"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "api-rest-clubei.herokuapp.com",
+  "basePath": "/v1",
+  "tags": [
+    {
+      "name": "Assinaturas e Categorias",
+      "description": "Contem todas as assinaturas em diversas categorias e estilos e suas respectivas imagens"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/assinaturas": {
+      "post": {
+        "tags": [
+          "assinaturas"
+        ],
+        "summary": "Cria uma nova assinatura para a coleção",
+        "description": "Cria uma nova assinatura e a adiciona da base de dados",
+        "operationId": "criaAssinatura",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Assinatura criada com sucesso",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Assinaturas"
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "assinaturas"
+        ],
+        "summary": "Busca toda a coleção de assinaturas",
+        "description": "Busca todas as assinatura da base de dados",
+        "operationId": "buscaAssinatura",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Assinaturas retornadas com sucesso",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Assinaturas"
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      }
+    },
+    "/assinaturas/categorias/{categoriaId}": {
+      "get": {
+        "tags": [
+          "assinaturas"
+        ],
+        "summary": "Busca todas as assinaturas por categoria",
+        "description": "Busca todoas as de assinaturas existentes baseado no parametro colocado no Id que corresponde a categoria",
+        "operationId": "buscaAssinaturaPorCategoria",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "categoriaId",
+            "in": "path",
+            "description": "ID da categoria no banco de dados",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Assinaturas por categoria retornadas com sucesso",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Categorias"
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      }
+    },
+    "/assinaturas/{assinaturaId}/": {
+      "get": {
+        "tags": [
+          "assinaturas"
+        ],
+        "summary": "Busca as assinaturas por Id",
+        "description": "Busca assinatura por Id de acordo com o parametro colocado",
+        "operationId": "buscaAssinaturaId",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "assinaturaId",
+            "in": "path",
+            "description": "ID da categoria no banco de dados",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Assinatura retornada com sucesso",
+            "schema": {
+              "$ref": "#/definitions/AssinaturasPorCategoria"
+            }
+          },
+          "404": {
+            "description": "Assinatura não encontrada"
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "assinaturas"
+        ],
+        "summary": "Modifica as assinaturas por Id",
+        "description": "Modifica uma assinatura de acordo com o parametro colocado no Id",
+        "operationId": "modificaAssinatura",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "assinaturaId",
+            "in": "path",
+            "description": "ID da da assinatura no banco de dados",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Assinatura retornada com sucesso",
+            "schema": {
+              "$ref": "#/definitions/Assinaturas"
+            }
+          },
+          "404": {
+            "description": "Assinatura não encontrada"
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "assinaturas"
+        ],
+        "summary": "Exclui as assinaturas por Id",
+        "description": "Exclui uma assinatura de acordo com o parametro colocado no Id",
+        "operationId": "excluiAssinatura",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "assinaturaId",
+            "in": "path",
+            "description": "ID da categoria no banco de dados",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Assinatura retornada com sucesso",
+            "schema": {
+              "$ref": "#/definitions/Assinaturas"
+            }
+          },
+          "404": {
+            "description": "Assinatura não encontrada"
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      }
+    },
+    "/categorias": {
+      "post": {
+        "tags": [
+          "categorias"
+        ],
+        "summary": "Adiciona uma nova categoria a coleção",
+        "description": "Adiciona uma nova categoria na base de dados",
+        "operationId": "adicionaCategoria",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria Criada com sucesso",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Categorias"
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "categorias"
+        ],
+        "summary": "Busca todas as categorias das coleção",
+        "description": "Busca todoas as de categorias existentes na base de dados",
+        "operationId": "buscaCategoria",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Categorias retornadas com sucesso",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Categorias"
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      }
+    },
+    "/categorias/{categoriaId}": {
+      "put": {
+        "tags": [
+          "categorias"
+        ],
+        "summary": "Modifica as categorias por Id",
+        "description": "Modifica uma categoria de acordo com o parametro colocado no Id",
+        "operationId": "modificaCategoria",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "categoriaId",
+            "in": "path",
+            "description": "ID da categoria no banco de dados",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria modificada com sucesso",
+            "schema": {
+              "$ref": "#/definitions/Assinaturas"
+            }
+          },
+          "404": {
+            "description": "Categoria não encontrada não encontrada"
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "categorias"
+        ],
+        "summary": "Exlcui as categorias por Id",
+        "description": "Exclui uma categoria de acordo com o parametro colocado no Id",
+        "operationId": "excluiCategoria",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "categoriaId",
+            "in": "path",
+            "description": "ID da categoria no banco de dados",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Categoria excluida com sucesso",
+            "schema": {
+              "$ref": "#/definitions/Assinaturas"
+            }
+          },
+          "404": {
+            "description": "Categoria não encontrada não encontrada"
+          },
+          "500": {
+            "description": "Erro interno no servidor"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Assinaturas": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "titulo": {
+          "type": "string"
+        },
+        "descricao": {
+          "type": "string"
+        },
+        "id_categoria": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "assinatura_img": {
+          "type": "string"
+        }
+      }
+    },
+    "AssinaturasPorCategoria": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "titulo": {
+          "type": "string"
+        },
+        "descricao": {
+          "type": "string"
+        },
+        "assinatura_img": {
+          "type": "string"
+        }
+      }
+    },
+    "Categorias": {
+      "type": "object",
+      "properties": {
+        "id_categoria": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "categoria": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

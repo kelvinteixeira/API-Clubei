@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var routes_1 = __importDefault(require("./routes"));
 var swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
-var swagger_json_1 = __importDefault(require("swagger.json"));
+var swagger_json_1 = __importDefault(require("../swagger.json"));
 var app = (0, express_1.default)();
 var PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 app.use(express_1.default.json());
