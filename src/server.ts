@@ -14,6 +14,6 @@ app.listen(PORT, () => {
 
 app.get('/', (req, res) => {
   return res.json({
-    message: "Bem vindo, a REST-API de consulta do Clubei, para mais informações acesse nossa documentação em"
+    message: "Bem vindo, a REST-API de consulta do Clubei, para mais informações acesse nossa documentação digitando na barra de pesquisa /api-docs"
   })
 })
