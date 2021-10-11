@@ -103,7 +103,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/Categorias"
+                "$ref": "#/definitions/AssinaturasPorCategorias"
               }
             }
           },
