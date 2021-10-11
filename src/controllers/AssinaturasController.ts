@@ -27,7 +27,21 @@ export default {
   async findCategory(req: Request, res: Response) {
     const { id_categoria } = req.params
     let assinaturaCategoria = await knex('assinaturas').select('id', 'titulo', 'descricao', 'assinatura_img').where({ id_categoria })
-    return res.status(200).json(assinaturaCategoria)
+    switch (id_categoria) {
+      case "1":
+        return res.status(200).json({
+          message: "Categoria de Alimentos",
+          assinaturaCategoria
+        })
+      break
+      
+      case "2":
+        return res.status(200).json({
+          message: "Categoria de Arte e Culturas",
+          assinaturaCategoria
+        })
+      break
+    }
   },
 
   async update(req: Request, res: Response) {

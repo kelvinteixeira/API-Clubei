@@ -100,7 +100,21 @@ exports.default = {
                         return [4 /*yield*/, (0, connection_1.default)('assinaturas').select('id', 'titulo', 'descricao', 'assinatura_img').where({ id_categoria: id_categoria })];
                     case 1:
                         assinaturaCategoria = _a.sent();
-                        return [2 /*return*/, res.status(200).json(assinaturaCategoria)];
+                        switch (id_categoria) {
+                            case "1":
+                                return [2 /*return*/, res.status(200).json({
+                                        message: "Categoria de Alimentos",
+                                        assinaturaCategoria: assinaturaCategoria
+                                    })];
+                                break;
+                            case "2":
+                                return [2 /*return*/, res.status(200).json({
+                                        message: "Categoria de Arte e Culturas",
+                                        assinaturaCategoria: assinaturaCategoria
+                                    })];
+                                break;
+                        }
+                        return [2 /*return*/];
                 }
             });
         });
