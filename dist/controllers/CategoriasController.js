@@ -60,21 +60,6 @@ exports.default = {
             });
         });
     },
-    find: function (req, res) {
-        return __awaiter(this, void 0, void 0, function () {
-            var id_categoria, assinaturaCategoria;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        id_categoria = req.params.id_categoria;
-                        return [4 /*yield*/, (0, connection_1.default)('assinaturas').select('id', 'titulo', 'descricao').where({ id_categoria: id_categoria })];
-                    case 1:
-                        assinaturaCategoria = _a.sent();
-                        return [2 /*return*/, res.status(200).json(assinaturaCategoria)];
-                }
-            });
-        });
-    },
     list: function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
             var categorias;

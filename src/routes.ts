@@ -22,10 +22,10 @@ routes.get('/assinaturas', AssinaturasController.list)
 routes.get('/assinaturas/:id', AssinaturasController.find)
 routes.put('/assinaturas/:id', AssinaturasController.update)
 routes.delete('/assinaturas/:id', AssinaturasController.delete)
+routes.get('/assinaturas/categorias/:id_categoria', AssinaturasController.findCategory)
 
 routes.post('/categorias', CategoriasController.create)
 routes.get('/categorias', CategoriasController.list)
-routes.get('/categorias/:id_categoria/assinaturas', CategoriasController.find)
 routes.put('/categorias/:id_categoria/', CategoriasController.update)
 routes.delete('/categorias/:id_categoria', CategoriasController.delete)
 

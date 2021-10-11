@@ -7,7 +7,6 @@ API desenvolvida para ser utilizada no projeto de catálogos de assinaturas e se
 - Node.Js
 - Typescript
 - MySQL
-- Docker
 
 ## Desenvolvedores
 - Kelvin Teixeira [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/kelvin-teixeira-8707b41a8/?originalSubdomain=br)]( https://www.linkedin.com/in/kelvin-teixeira-8707b41a8/?originalSubdomain=br)
