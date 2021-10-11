@@ -97,7 +97,7 @@ exports.default = {
                 switch (_a.label) {
                     case 0:
                         id_categoria = req.params.id_categoria;
-                        return [4 /*yield*/, (0, connection_1.default)('assinaturas').select('id', 'titulo', 'descricao').where({ id_categoria: id_categoria })];
+                        return [4 /*yield*/, (0, connection_1.default)('assinaturas').select('id', 'titulo', 'descricao', 'assinatura_img').where({ id_categoria: id_categoria })];
                     case 1:
                         assinaturaCategoria = _a.sent();
                         return [2 /*return*/, res.status(200).json(assinaturaCategoria)];
