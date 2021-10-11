@@ -8,7 +8,7 @@ export default {
     const data = { titulo, descricao, id_categoria, assinatura_img }
     await knex('assinaturas').insert(data)
     return res.status(201).json({
-      message: "Criado com sucesso!", 
+      message: "Assinatura criada com sucesso!", 
       data: data
     })
   },
@@ -83,7 +83,7 @@ export default {
   async delete(req: Request, res: Response) {
     const { id } = req.params
     await knex('assinaturas').delete().where({ id })
-    return res.status(200).json({ message: "Registro excluido com sucesso!"})
+    return res.status(200).json({ message: "Assinatura excluida com sucesso!"})
   }
 }
 

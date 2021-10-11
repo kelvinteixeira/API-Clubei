@@ -5,7 +5,7 @@ const app = express()
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000
 
 app.use(express.json())
-app.use(routes)
+app.use('/v1', routes)
 app.use('/uploads/', express.static('uploads'))
 
 app.listen(PORT, () => {
@@ -14,6 +14,6 @@ app.listen(PORT, () => {
 
 app.get('/', (req, res) => {
   return res.json({
-    Status: "Okay"
+    message: "Bem vindo, a REST-API de consulta do Clubei, para mais informações acesse nossa documentação em"
   })
 })
