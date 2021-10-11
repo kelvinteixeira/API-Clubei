@@ -17,6 +17,6 @@ app.listen(PORT, () => {
 
 app.get('/', (req, res) => {
   return res.json({
-    message: 'Bem vindo a REST-API de consulta do Clubei, está API foi desenvolvida para o site Clubei, projeto final do Gama Xp 38ª edição. Para consultar mais informações e os endpoints, acesse nossa documentação digitando ao fim da barra de pesquisa .../api-docs'
+    message: 'Bem vindo a REST-API de consulta do Clubei, está API foi desenvolvida para o site Clubei, projeto final do Gama Xp 38ª edição. Para consultar mais informações e os endpoints, acesse nossa documentação digitando ao fim da barra de pesquisa /api-docs'
   })
 })
