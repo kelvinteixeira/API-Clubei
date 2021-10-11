@@ -53,7 +53,7 @@ exports.default = {
                     case 1:
                         _b.sent();
                         return [2 /*return*/, res.status(201).json({
-                                message: "Criado com sucesso!",
+                                message: "Categoria criada com sucesso!",
                                 data: data
                             })];
                 }
@@ -89,7 +89,7 @@ exports.default = {
                     case 2:
                         categorias = _a.sent();
                         return [2 /*return*/, res.status(200).json({
-                                message: 'Alterado com sucesso em ' + new Date().toISOString(),
+                                message: 'Categoria alterada com sucesso em ' + new Date().toISOString(),
                                 data: categorias
                             })];
                 }
@@ -106,7 +106,7 @@ exports.default = {
                         return [4 /*yield*/, (0, connection_1.default)('categorias').delete().where({ id_categoria: id_categoria })];
                     case 1:
                         _a.sent();
-                        return [2 /*return*/, res.status(200).json({ message: "Registro excluido com sucesso!" })];
+                        return [2 /*return*/, res.status(200).json({ message: "Categoria excluida com sucesso!" })];
                 }
             });
         });

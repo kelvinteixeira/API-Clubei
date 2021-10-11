@@ -55,7 +55,7 @@ exports.default = {
                     case 1:
                         _c.sent();
                         return [2 /*return*/, res.status(201).json({
-                                message: "Criado com sucesso!",
+                                message: "Assinatura criada com sucesso!",
                                 data: data
                             })];
                 }
@@ -174,7 +174,7 @@ exports.default = {
                         return [4 /*yield*/, (0, connection_1.default)('assinaturas').delete().where({ id: id })];
                     case 1:
                         _a.sent();
-                        return [2 /*return*/, res.status(200).json({ message: "Registro excluido com sucesso!" })];
+                        return [2 /*return*/, res.status(200).json({ message: "Assinatura excluida com sucesso!" })];
                 }
             });
         });
