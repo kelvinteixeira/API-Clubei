@@ -30,17 +30,40 @@ export default {
     switch (id_categoria) {
       case "1":
         return res.status(200).json({
-          message: "Categoria de Alimentos",
-          assinaturaCategoria
+          Categoria: "Alimentos",
+          data: assinaturaCategoria
         })
-      break
+        break
       
       case "2":
         return res.status(200).json({
-          message: "Categoria de Arte e Culturas",
-          assinaturaCategoria
+          Categoria: "Arte e Culturas",
+          data: assinaturaCategoria
         })
-      break
+        break
+      
+      case "3":
+        return res.status(200).json({
+          Categoria: "Bebidas",
+          data: assinaturaCategoria
+        })
+        break
+      
+      case "4":
+        return res.status(200).json({
+          Categoria: "Fitness",
+          data: assinaturaCategoria
+        })
+        break
+      
+      case "5":
+        return res.status(200).json({
+          Categoria: "LIvros",
+          data: assinaturaCategoria
+        })
+        break
+      default:
+        return res.status(404).json({ message: "Categoria inexistente ou não encontrada" })
     }
   },
 
