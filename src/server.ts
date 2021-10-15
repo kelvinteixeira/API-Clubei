@@ -1,11 +1,15 @@
 import express from 'express'
 import routes from './routes'
+import cors from 'cors'
 import swaggerUi from 'swagger-ui-express'
 import swaggerDocs from './swagger.json'
+
 
 const app = express()
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000
 
+
+app.use(cors())
 app.use(express.json())
 app.use('/v1', routes)
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
