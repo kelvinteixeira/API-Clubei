@@ -138,7 +138,7 @@
                     "200": {
                         "description": "Assinatura retornada com sucesso",
                         "schema": {
-                            "$ref": "#/definitions/AssinaturasPorCategoria"
+                            "$ref": "#/definitions/Assinaturas"
                         }
                     },
                     "404": {
@@ -297,11 +297,11 @@
                     "200": {
                         "description": "Categoria modificada com sucesso",
                         "schema": {
-                            "$ref": "#/definitions/Assinaturas"
+                            "$ref": "#/definitions/Categorias"
                         }
                     },
                     "404": {
-                        "description": "Categoria não encontrada não encontrada"
+                        "description": "Categoria não encontrada"
                     },
                     "500": {
                         "description": "Erro interno no servidor"
@@ -332,11 +332,11 @@
                     "200": {
                         "description": "Categoria excluida com sucesso",
                         "schema": {
-                            "$ref": "#/definitions/Assinaturas"
+                            "$ref": "#/definitions/Categorias"
                         }
                     },
                     "404": {
-                        "description": "Categoria não encontrada não encontrada"
+                        "description": "Categoria não encontrada"
                     },
                     "500": {
                         "description": "Erro interno no servidor"

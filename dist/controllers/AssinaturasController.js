@@ -70,7 +70,7 @@ exports.default = {
                     case 0: return [4 /*yield*/, (0, connection_1.default)('assinaturas').orderBy('id')];
                     case 1:
                         assinaturas = _a.sent();
-                        return [2 /*return*/, res.status(200).json({ data: assinaturas })];
+                        return [2 /*return*/, res.status(200).json(assinaturas)];
                 }
             });
         });
@@ -85,7 +85,7 @@ exports.default = {
                         return [4 /*yield*/, (0, connection_1.default)('assinaturas').where({ id: id })];
                     case 1:
                         assinatura = _a.sent();
-                        return [2 /*return*/, res.status(200).json({ data: assinatura })];
+                        return [2 /*return*/, res.status(200).json(assinatura)];
                 }
             });
         });
@@ -158,7 +158,7 @@ exports.default = {
                         assinatura = _c.sent();
                         return [2 /*return*/, res.status(200).json({
                                 message: 'Alterado com sucesso em ' + new Date().toISOString(),
-                                data: assinatura
+                                assinatura: assinatura
                             })];
                 }
             });

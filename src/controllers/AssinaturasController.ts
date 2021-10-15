@@ -15,13 +15,13 @@ export default {
 
   async list(req: Request, res: Response) {
     let assinaturas =  await knex('assinaturas').orderBy('id')
-    return res.status(200).json({ data: assinaturas })
+    return res.status(200).json( assinaturas )
   },
 
   async find(req: Request, res: Response) {
     const { id } = req.params
     const assinatura = await knex('assinaturas').where({ id })
-    return res.status(200).json({ data: assinatura })
+    return res.status(200).json(assinatura)
   },
 
   async findCategory(req: Request, res: Response) {
@@ -76,7 +76,7 @@ export default {
     const assinatura = await knex('assinaturas').where({ id })
     return res.status(200).json({
       message: 'Alterado com sucesso em ' + new Date().toISOString(), 
-      data: assinatura
+      assinatura
     })
   },
 
