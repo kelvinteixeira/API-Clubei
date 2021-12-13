@@ -1,14 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var env = require('./.env');
 exports.default = {
     development: {
         client: 'mysql2',
         connection: {
-            host: 'us-cdbr-east-04.cleardb.com',
-            user: 'ba74bf79fcfadb',
-            password: 'aa3810d4',
-            database: 'heroku_2a2856ff6780273',
-            port: 3306
+            host: env.host,
+            user: env.user,
+            database: env.database,
+            port: 3306,
+            password: env.password
         }
     }
 };
